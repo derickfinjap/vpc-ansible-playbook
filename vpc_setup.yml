@@ -16,8 +16,8 @@
         state: "{{state}}"
       register: vpcout
 
-    - debug:
-        var: vpcout
+#    - debug:
+#        var: vpcout
 
     - name: Create Public Subnet 1 in charlie
       ec2_vpc_subnet:
