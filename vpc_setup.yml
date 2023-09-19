@@ -31,6 +31,65 @@
           Name: finjo-pubsub1
       register: pubsub1_out      
     
+    - name: Create Public Subnet 2 in echo
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ echo }}"
+        state: "{{state}}"
+        cidr: "{{ SamSub1Cidr }}"
+        map_public: yes
+        resources_tag:
+          Name: finjo-pubsub2
+      register: pubsub2_out 
+
+      - name: Create Public Subnet 3 in delta
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ delta }}"
+        state: "{{state}}"
+        cidr: "{{ AnnSub1Cidr }}"
+        map_public: yes
+        resources_tag:
+          Name: finjo-pubsub3
+      register: pubsub3_out 
+
+      - name: Create Private Subnet 1 in charlie
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ charlie }}"
+        state: "{{state}}"
+        cidr: "{{ WaltSub1Cidr }}"
+        map_public: yes
+        resources_tag:
+          Name: finjo-privsub1
+      register: privsub1_out 
+
+      - name: Create Private Subnet 2 in echo
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ echo }}"
+        state: "{{state}}"
+        cidr: "{{ JustSub1Cidr }}"
+        map_public: yes
+        resources_tag:
+          Name: finjo-privsub2
+      register: privsub2_out 
+
+      - name: Create Private Subnet 3 in delta
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ delta }}"
+        state: "{{state}}"
+        cidr: "{{ NervSub1Cidr }}"
+        map_public: yes
+        resources_tag:
+          Name: finjo-privsub3
+      register: privsub3_out 
 
 
 
