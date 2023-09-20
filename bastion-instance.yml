@@ -5,7 +5,7 @@
     - name: Import VPC setup Variables
       include_vars: vars/bastion-setup
 
-    - name: Import VPC setup Variables
+    - name: Import VPC output Variables
       include_vars: vars/output_vars
 
     - name: Create Finjo ec2 key
