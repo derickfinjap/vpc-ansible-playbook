@@ -55,6 +55,41 @@
           Name: finjo3-pubsub3
       register: pubsub3_out
 
+    - name: Create Private Subnet 1 in charlie
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ charlie }}"
+        state: "{{ state }}"
+        cidr: "{{ WaltSub1Cidr }}"
+        map_public: yes
+        resource_tags:
+          Name: riko1-privsub1
+      register: privsub1_out
+
+    - name: Create Private Subnet 2 in anne
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ anne }}"
+        state: "{{ state }}"
+        cidr: "{{ JustSub2Cidr }}"
+        map_public: yes
+        resource_tags:
+          Name: rico2-privsub2
+      register: privsub2_out
+
+    - name: Create Private Subnet 3 in delta
+      ec2_vpc_subnet:
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        az: "{{ delta }}"
+        state: "{{ state }}"
+        cidr: "{{ NervSub3Cidr }}"
+        map_public: yes
+        resource_tags:
+          Name: riko3-privsub3
+      register: privsub3_out
 
 
 
