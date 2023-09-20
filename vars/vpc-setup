@@ -16,7 +16,7 @@ region: "us-east-2"
 
 # Zones Names
 charlie: us-east-2a
-echo: us-east-2b
+anne: us-east-2b
 delta: us-east-2c
 
 state: present

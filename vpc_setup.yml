@@ -31,7 +31,7 @@
           Name: finjo1-pubsub1
       register: pubsub1_out
 
-    - name: Create Public Subnet 2 in echo
+    - name: Create Public Subnet 2 in anne
       ec2_vpc_subnet:
         vpc_id: "{{ vpcout.vpc.id }}"
         region: "{{ region }}"
