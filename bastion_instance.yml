@@ -45,7 +45,7 @@
          wait: yes
          wait_timeout: 300
          instance_tags:
-             Name: Bastion_Host
+             Name: "Bastion_Host"
              Project: Finjolino
              Owner: DevOps Team
          exact_count: 1
