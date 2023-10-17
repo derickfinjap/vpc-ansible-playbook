@@ -1,9 +1,9 @@
 ---
-- hosts: localhost
+- name: Setup Finjo Bastion Host
+  hosts: localhost
   connection: local
   gather_facts: no
   tasks:
-    - name: Setup Finjo Bastion Host
 
     - name: Import VPC setup Variables
       include_vars: vars/bastion_setup
